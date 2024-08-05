@@ -1,5 +1,5 @@
-import { createInnerTRPCContext } from "../trpc/base"
-import { appRouter } from "../api/root"
+import { createInnerTRPCContext } from '../trpc/base'
+import { appRouter } from '../api/root'
 
 export const createUser = async () => {
   const context = createInnerTRPCContext({})

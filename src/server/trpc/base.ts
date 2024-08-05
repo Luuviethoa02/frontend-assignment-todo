@@ -1,8 +1,8 @@
-import { initTRPC } from "@trpc/server"
-import { ZodError } from "zod"
-import superjson from "superjson"
+import { initTRPC } from '@trpc/server'
+import { ZodError } from 'zod'
+import superjson from 'superjson'
 
-import { db } from "../db"
+import { db } from '../db'
 
 type Session = {
   userId: number
@@ -23,7 +23,7 @@ export const t = initTRPC.context<typeof createInnerTRPCContext>().create({
 })
 
 /**
- * This helper generates the "internals" for a tRPC context.
+ * This helper generates the 'internals' for a tRPC context.
  *
  * Examples of things you may need it for:
  * - testing, so we dont have to mock Next.js' req/res

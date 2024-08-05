@@ -1,8 +1,8 @@
-import { z } from "zod"
+import { z } from 'zod'
 
-import { IdSchema, NonEmptyStringSchema } from "@/utils/server/base-schemas"
+import { IdSchema, NonEmptyStringSchema } from '@/utils/server/base-schemas'
 
-export const TodoStatusSchema = z.enum(["completed", "pending"])
+export const TodoStatusSchema = z.enum(['completed', 'pending'])
 
 export const TodoSchema = z.object({
   id: IdSchema,

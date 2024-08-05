@@ -1,10 +1,10 @@
-import { describe, test } from "vitest"
-import { faker } from "@faker-js/faker/locale/vi"
+import { describe, test } from 'vitest'
+import { faker } from '@faker-js/faker/locale/vi'
 
-import { createUser } from "./utils"
+import { createUser } from './utils'
 
-describe.concurrent("Delete todo", async () => {
-  test("User can delete todo", async ({ expect }) => {
+describe.concurrent('Delete todo', async () => {
+  test('User can delete todo', async ({ expect }) => {
     const user = await createUser()
 
     const todoBody = faker.string.sample()
@@ -15,7 +15,7 @@ describe.concurrent("Delete todo", async () => {
 
     await expect(
       user.getAllTodos({
-        statuses: ["pending", "completed"],
+        statuses: ['pending', 'completed'],
       })
     ).resolves.toContainEqual(
       expect.objectContaining({
@@ -31,7 +31,7 @@ describe.concurrent("Delete todo", async () => {
 
     await expect(
       user.getAllTodos({
-        statuses: ["pending", "completed"],
+        statuses: ['pending', 'completed'],
       })
     ).resolves.not.toContainEqual(
       expect.objectContaining({

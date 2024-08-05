@@ -1,6 +1,6 @@
-import type { CreateNextContextOptions } from "@trpc/server/adapters/next"
+import type { CreateNextContextOptions } from '@trpc/server/adapters/next'
 
-import { createInnerTRPCContext } from "./base"
+import { createInnerTRPCContext } from './base'
 
 /**
  * This is the actual context you'll use in your router. It will be used to

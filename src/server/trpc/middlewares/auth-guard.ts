@@ -1,10 +1,10 @@
-import { TRPCError } from "@trpc/server"
+import { TRPCError } from '@trpc/server'
 
-import { t } from "../base"
+import { t } from '../base'
 
 export const authGuard = t.middleware(({ ctx, next }) => {
   if (!ctx.session?.userId) {
-    throw new TRPCError({ code: "UNAUTHORIZED" })
+    throw new TRPCError({ code: 'UNAUTHORIZED' })
   }
   return next({
     ctx: {

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import { db } from "../db"
+import { db } from '../db'
 
 let teardownHappened = false
 
@@ -10,7 +10,7 @@ export const setup = async () => {
 
 export const teardown = async () => {
   if (teardownHappened) {
-    throw new Error("teardown called twice")
+    throw new Error('teardown called twice')
   }
   teardownHappened = true
 
@@ -24,7 +24,7 @@ const dropAllData = async () => {
   }
 
   await db.transaction().execute(async (t) => {
-    const promises = (["todos"] as const).map((name) =>
+    const promises = (['todos'] as const).map((name) =>
       t.deleteFrom(name).execute()
     )
 

@@ -1,14 +1,14 @@
-import * as Tabs from "@radix-ui/react-tabs"
-import { useState } from "react"
+import * as Tabs from '@radix-ui/react-tabs'
+import { useState } from 'react'
 
-import { CreateTodoForm } from "@/client/components/CreateTodoForm"
-import { TodoList } from "@/client/components/TodoList"
+import { CreateTodoForm } from '@/client/components/CreateTodoForm'
+import { TodoList } from '@/client/components/TodoList'
 
 /**
  * QUESTION 6:
  * -----------
  * Implement quick filter/tab feature so that we can quickly find todos with
- * different statuses ("pending", "completed", or both). The UI should look like
+ * different statuses ('pending', 'completed', or both). The UI should look like
  * the design on Figma.
  *
  * NOTE:
@@ -18,16 +18,16 @@ import { TodoList } from "@/client/components/TodoList"
  * Documentation references:
  *  - https://www.radix-ui.com/docs/primitives/components/tabs
  */
-export type TabValue = "all" | "pending" | "completed"
+export type TabValue = 'all' | 'pending' | 'completed'
 
 const tabOptions: { value: TabValue; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "pending", label: "Pending" },
-  { value: "completed", label: "Completed" },
+  { value: 'all', label: 'All' },
+  { value: 'pending', label: 'Pending' },
+  { value: 'completed', label: 'Completed' },
 ]
 
 const Index = () => {
-  const [tabActive, setTabActive] = useState<TabValue>("all")
+  const [tabActive, setTabActive] = useState<TabValue>('all')
 
   return (
     <main className="mx-auto w-[480px] pt-12">
@@ -44,8 +44,8 @@ const Index = () => {
                   onClick={() => setTabActive(value)}
                   className={`mr-2 rounded-[30px] border border-solid border-[#E2E8F0] px-6 py-3 text-center text-sm font-bold capitalize leading-5 ${
                     tabActive === value
-                      ? "bg-[#334155] text-white"
-                      : "bg-none text-[#334155]"
+                      ? 'bg-[#334155] text-white'
+                      : 'bg-none text-[#334155]'
                   }`}
                   value={value}
                 >
